@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Beautiful Prachi - Happy Girlfriend's Day</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #fff5f7;
+            font-family: 'Poppins', sans-serif;
+            color: #555;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff6b6b;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0,  ̈0.1);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards 0.5s;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards 1s;
+        }
+        
+        .rose-container {
+            width: 200px;
+            height: 200px;
+            margin: 2rem auto;
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        .rose {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .rose img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 5px 15px rgba(255, 105, 140, 0.4));
+            transition: transform 0.5s;
+        }
+        
+        .rose:hover img {
+            transform: scale(1.1) rotate(-5deg);
+        }
+        
+        .message {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(255, 105, 140, 0.2);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards 1.5s;
+        }
+        
+        .message p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            color: #ff6b6b;
+            opacity: 0;
+            animation: float-up 4s linear infinite;
+        }
+        
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #ff6b6b;
+            margin-top: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards 2s;
+        }
+        
+        .btn-reveal {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+            border: none;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(255, 105, 140, 0.3);
+            transition: all 0.3s;
+            opacity: 0;
+            animation: fadeIn 1s forwards 2.5s;
+        }
+        
+        .btn-reveal:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 105, 140, 0.4);
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+        
+        @keyframes float-up {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .rose-container {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts" id="hearts"></div>
+    
+    <div class="container">
+        <h1>Happy Girlfriend's Day Prachi</h1>
+        <p class="subtitle">For the most amazing girl in my world</p>
+        
+        <div class="rose-container">
+            <div class="rose" id="rose">
+                <img src="IMG_20250801_104946.jpg" alt="A beautiful image for Prachi" />
+            </div>
+        </div>
+        
+        <div class="message" id="message">
+            <p>Prachi, every moment with you is special, but today I want to remind you just how much you mean to me.</p>
+            <p>Your love makes my world brighter, your beautiful smile warms my heart, and your presence makes every moment magical.</p>
+            <p>Thank you for being you, for being my Prachi, and for filling my life with endless happiness. Love, Subh</p>
+        </div>
+        
+        <button class="btn-reveal" id="revealBtn">Click for Your Surprise!</button>
+        
+        <div class="signature">Forever yours,<br>Subh</div>
+        <div style="margin-top:20px;">With love, Subh</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create floating hearts
+            const heartsContainer = document.getElementById('hearts');
+            
+            function createHeart() {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+                heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+                heartsContainer.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 4000);
+            }
+            
+            setInterval(createHeart, 300);
+            
+            // Rose animation on click
+            const rose = document.getElementById('rose');
+            const message = document.getElementById('message');
+            const revealBtn = document.getElementById('revealBtn');
+            
+            revealBtn.addEventListener('click', function() {
+                // Animate the rose
+                rose.style.animation = 'none';
+                void rose.offsetWidth; // Trigger reflow
+                rose.style.animation = 'float 6s ease-in-out infinite';
+                
+                // Add glitter effect
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        createHeart();
+                    }, i * 100);
+                }
+                
+                // Change message content for the surprise
+                message.innerHTML = `
+                    <p>Prachi, this image is just a small token of my love for you - I promise to keep giving you reasons to smile.</p>
+                    <p>You're the most beautiful, kind and amazing person I know, and I'm the luckiest to call you mine.</p>
+                    <p>I love you more than words can express, Prachi. Happy Girlfriend's Day from your Subh!</p>
+                    <p style="margin-top:15px;font-family:'Dancing Script',cursive;">- Subh ❤️</p>
+                `;
+                
+                // Change button text
+                revealBtn.textContent = 'I Love You!';
+            });
+            
+            // Add cursor heart trail
+            document.addEventListener('mousemove', function(e) {
+                if (Math.random() > 0.7) {
+                    const heart = document.createElement('div');
+                    heart.classList.add('heart');
+                    heart.innerHTML = '❤';
+                    heart.style.left = e.pageX + 'px';
+                    heart.style.top = e.pageY + 'px';
+                    heart.style.position = 'absolute';
+                    heart.style.fontSize = Math.random() * 15 + 5 + 'px';
+                    heart.style.animationDuration = '2s';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.remove();
+                    }, 2000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
